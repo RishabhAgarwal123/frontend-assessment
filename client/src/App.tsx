@@ -1,20 +1,22 @@
 import React from "react";
 import "./App.css";
+import UserList from "./components/UserList";
+import { UserProvider } from "./context/UserContext";
 
 
 export const App: React.FC = () => {
   return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to DoseSpot</h1>
-        </header>
-        
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Welcome to DoseSpot</h1>
+      </header>
 
-        <footer>
-        </footer>
-      </div>
-    );
+      <UserProvider>
+        <UserList />
+      </UserProvider>
+
+      <footer>
+      </footer>
+    </div>
+  );
 };
